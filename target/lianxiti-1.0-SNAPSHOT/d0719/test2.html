@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS测试</title>
+    
+    <script>
+
+    /*
+    计算天数
+     */
+        function panduantianshu() {
+            var year = Number(document.getElementById("year").value);
+            var month = Number(document.getElementById("month1").value);
+            var day = Number(document.getElementById("day").value);
+            var days=0;
+            var count=0;
+            var out;
+            var str='';
+            if(year>0 && month>0 && month<13 && day>0 && day<32){
+                for (var i = 1; i <month; i++) {
+                    switch (i) {
+                        case 1:
+                        case 3:
+                        case 5:
+                        case 7:
+                        case 8:
+                        case 10:
+                        case 12:
+                            days=31;
+                            break;
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            days=30;
+                            break;
+                        case 2:
+                            if (year%400===0 || (year%4===0&&year%100!==0)){
+                                days=29;
+                            }else {
+                                days=28;
+                            }
+                            break;
+                    }
+                    count = count+days;
+                }
+                count = count+day;
+                //alert(count);
+                out= year + "年" + month + "月" + day + "日是" + year + "年的第" + count + "天" ;
+            }
+            else {
+                out= '输入有误';
+            }
+            document.getElementById("demo1").innerHTML=out;
+            for (var j = 0; j < count; j++) {
+                str += '<img src="../picture/dahuanglian.png" width="30" height="30" alt="未加载">';
+            }
+            document.getElementById("demo2").innerHTML=str;
+        }
+
+        /*
+        判断月份所属季节
+         */
+        function panduanjijie() {
+            var out;
+            var month = document.getElementById("month").value;
+            switch (month) {
+                case '12':
+                case '1':
+                case '2':
+                    out=month+'月:冬季';
+                    break;
+                case '3':
+                case '4':
+                case '5':
+                    out=month+'月:春季';
+                    break;
+                case '6':
+                case '7':
+                case '8':
+                    out=month+'月:夏季';
+                    break;
+                case '9':
+                case '10':
+                case '11':
+                    out=month+'月:秋季';
+                    break;
+                default:
+                    out='输入有误，请准确输入1-12月份'
+            }
+            document.getElementById('demo').innerHTML=out;
+            //alert(out);
+
+        }
+        /*
+        判断今天是周几
+         */
+        function panduan(){
+            var day = new Date().getDay();
+            switch (day) {
+                case 0:
+                    alert("今天是周天");
+                    break;
+                case 1:
+                    alert("今天是周一");
+                    break;
+                case 2:
+                    alert("今天是周二");
+                    break;
+                case 3:
+                    alert("今天是周三");
+                    break;
+                case 4:
+                    alert("今天是周四");
+                    break;
+                case 5:
+                    alert("今天是周五");
+                    break;
+                case 6:
+                    alert("今天是周六");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="panduan()">点击判断今天是周几</button>
+<hr color="green">
+<p>请输入月份判断季节</p>
+<label for="month"></label><input id="month">
+<button onclick="panduanjijie()">点击判断</button>
+<p id="demo"></p>
+<hr color="red">
+<p>输入时间计算是当年的第几天</p>
+<label for="year"></label><input id="year" maxlength="4">年
+<label for="month1"></label><input id="month1" >月
+<label for="day"></label><input id="day" >日
+
+<button onclick="panduantianshu()">点击计算</button>
+<p id="demo1"></p>
+<hr color="blue">
+<p id="demo2"> </p>
+<!--<img src="../picture/dahuanglian.png" width="30" height="30">-->
+</body>
+</html>

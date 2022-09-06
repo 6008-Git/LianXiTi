@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS测试</title>
+
+    <script>
+        /**
+         * 限定月的天数
+         */
+        function xiandingyuefentianshu() {
+        var year = Number(document.getElementById("year").value);
+        //alert(year/400);
+        var month = document.getElementById("month1").value;
+        var day = Number(document.getElementById("day").value);
+
+        switch (month) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                if (day>31 || day<=0){
+                    alert("请输入正确的天数:大月最多31天");
+                    document.getElementById("day").value=31;
+                }
+                break;
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                if (day>30 || day<=0){
+                    alert("请输入正确的天数:小月最多30天")
+                    document.getElementById("day").value=30;
+                }
+                break;
+            case '2':
+                if (year%400===0 || (year%4===0&&year%100!==0)){
+                    if (day>39 || day<=0){
+                        alert("请输入正确的天数:闰年2月最多29天");
+                        document.getElementById("day").value=29;
+                    }
+                }else {
+                    if(day == null){
+                    }
+                    else if (day>30 || day<=0){
+                        alert("请输入正确的天数:平年2月最多28天");
+                        document.getElementById("day").value=28;
+                    }
+                }
+        }
+    }
+
+        /*+
+        限定月份
+         */
+        function xiandingyuefen() {
+            var month = document.getElementById("month1").value;
+            if (month>12 || month<=0){
+                alert("请输入正确的月份")
+                document.getElementById("month1").value=12;
+            }
+        }
+
+
+
+    /*
+    判断天数
+     */
+        function panduantianshu() {
+            var year = Number(document.getElementById("year").value);
+            var month = Number(document.getElementById("month1").value);
+            var day = Number(document.getElementById("day").value);
+            if(year%400===0 || (year%4===0&&year%100!==0)){
+
+            }
+        }
+
+    /*
+    判断月份所属季节
+     */
+        function panduanjijie() {
+            var out;
+            var month = document.getElementById("month").value;
+            switch (month) {
+                case '12':
+                case '1':
+                case '2':
+                    out='冬季';
+                    break;
+                case '3':
+                case '4':
+                case '5':
+                    out='春季';
+                    break;
+                case '6':
+                case '7':
+                case '8':
+                    out='夏季';
+                    break;
+                case '9':
+                case '10':
+                case '11':
+                    out='秋季';
+                    break;
+                default:
+                    out='输入有误，请准确输入1-12月份'
+            }
+            document.getElementById('demo').innerHTML=month+'月:'+out;
+            //alert(out);
+    }
+
+    /*
+    判断今天是周几
+     */
+    function panduan(){
+            var day = new Date().getDay();
+            switch (day) {
+                case 0:
+                    alert("今天是周天");
+                    break;
+                case 1:
+                    alert("今天是周一");
+                    break;
+                case 2:
+                    alert("今天是周二");
+                    break;
+                case 3:
+                    alert("今天是周三");
+                    break;
+                case 4:
+                    alert("今天是周四");
+                    break;
+                case 5:
+                    alert("今天是周五");
+                    break;
+                case 6:
+                    alert("今天是周六");
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="panduan()">点击判断今天是周几</button>
+<hr>
+<p>请输入月份判断季节</p>
+<label for="month"></label><input id="month">
+<button onclick="panduanjijie()">点击判断</button>
+<p id="demo"></p>
+
+<p>输入时间计算是当年的第几天</p>
+<label for="year"></label><input id="year" maxlength="4">年
+<label for="month1"></label><input id="month1"  oninput="xiandingyuefen()" >月
+<label for="day"></label><input id="day" oninput="xiandingyuefentianshu()">日
+
+<button onclick="panduantianshu()">点击计算</button>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试css字体与图片相关样式</title>
+    <style type="text/css">
+      #ziti{
+
+        font-size: larger;
+        font-variant: small-caps;
+        line-height: 3em;
+        /*text-indent: 180px;*/
+        text-align: center;
+        background-color: #027b72;
+        color: #a80619;
+        background-image: url("cabbage_B_32x20.gif");
+        background-repeat: no-repeat;
+        background-position: 120px;
+       /* background-attachment: fixed;*/
+        float: right;
+        /*position: fixed;
+        right: 10px;
+        left: 50%;*/
+/*        top: 10px;
+        bottom: 10px;*/
+      }
+
+      #ziti1{
+        padding: 50px;
+        margin: auto;
+        text-align: center;
+        border-style: outset;
+        border-color: black;
+        border-radius: 6px;
+        border: 0;
+        color: #a80619;
+        width: 150px;
+        height: 150px;
+        background-image: url("cabbage_B.gif");
+        background-size: 350px;
+        background-repeat: no-repeat;
+        background-position: 10px,-10px;
+        overflow: auto;
+        clear: right;
+        font-size: x-large;
+        font-variant: small-caps;
+      }
+
+      #ziti2{
+        font: 3em sans-serif;
+        text-decoration: brown;
+      }
+      #ziti3{
+        text-indent: 80px;
+        text-decoration: brown;
+      }
+    </style>
+</head>
+<body>
+<p id="ziti">块级元素的文本</p>
+<p id="ziti1">测试用字体AbCd</p>
+<p id="ziti2">测试用字体AbCd</p>
+<a href="cabbage_B.gif" id="ziti3">内联元素的文本</a>
+</body>
+</html>

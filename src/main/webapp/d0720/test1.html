@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS考核题</title>
+   <!-- <link  rel="stylesheet"  href="test1.css" type="text/css">-->
+    <style>
+        @import "test1.css";
+    </style>
+    <script>
+
+    //1、查找数组重复元素
+        function function1() {
+            var newArr=[];
+            var arr=[];
+            var setarr=document.getElementById("shuzu").value;
+            arr = setarr.toString().split(',');
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i+1; j < arr.length; j++) {
+                    if(arr[i]===arr[j] && newArr.indexOf(arr[j])===-1){
+                        newArr.push(arr[i]);
+                    }
+                }
+            }
+            document.getElementById("demo1").innerHTML='重复元素有'+newArr;
+    }
+    //2、打点计时器
+    function function2() {
+        var start = Number(document.getElementById("start").value);
+        var end = Number(document.getElementById("end").value);
+        var timer = setInterval(function() {
+            if (start <= end) {
+                console.log(start++);
+                //document.getElementById("demo2").innerHTML=++start;
+            } else {
+                clearInterval(timer);
+            }
+        }, 100);
+        return {
+            cancel: function() {
+                clearInterval(timer)
+            }
+        }
+    }
+    //3、合并两个数组，传入新数组
+    function function3() {
+        var newarr=[];
+        var shuzu3_1=document.getElementById("shuzu3_1").value;
+        var shuzu3_2=document.getElementById("shuzu3_2").value;
+        shuzu3_1 = shuzu3_1.toString().split('.');
+        shuzu3_2 = shuzu3_2.toString().split('.');
+        for (var i = 0; i < shuzu3_1.length; i++) {
+            newarr.push(shuzu3_1[i]);
+        }
+        for (var j = 0; j < shuzu3_2.length; j++) {
+            newarr.push(shuzu3_2[j]);
+        }
+        document.getElementById("demo3").innerHTML='合并后的数组为'+newarr;
+    }
+    //4、数组元素求和
+    function function4() {
+        var sum=0;
+        var arr=[];
+        var setarr=document.getElementById("shuzu4").value;
+        arr = setarr.toString().split('.');
+        for (var i = 0; i < arr.length; i++) {
+            sum+=Number(arr[i]);
+        }
+        document.getElementById("demo4").innerHTML='和为'+sum;
+    }
+
+    //5、统计数组某一元素出现的次数
+    function function5() {
+        var sum=0;
+        var arr=[];
+        var setarr=document.getElementById("shuzu5").value;
+        var yuansu=document.getElementById("yuansu").value;
+        arr = setarr.toString().split('.');
+        for (var i = 0; i < arr.length; i++) {
+            if(arr[i]===yuansu){
+                sum+=1;
+            }
+        }
+        document.getElementById("demo5").innerHTML='出现的次数为:'+sum;
+    }
+
+    //6、求数组每个元素的2次方
+    function function6() {
+        var newArr=[];
+        var setarr=document.getElementById("shuzu6").value;
+        arr = setarr.toString().split('.');
+        for (var i = 0; i < arr.length; i++) {
+            newArr.push(Number(arr[i]*arr[i]));
+        }
+        document.getElementById("demo6").innerHTML='2次方数组为:'+newArr;
+    }
+
+    //7、判断字符串是否包含数字
+    function function7() {
+        var str =  document.getElementById("zifu7").value.toString();
+        for (var i = 0; i < str.length; i++) {
+            if(!isNaN(str.charAt(i))){
+                document.getElementById("demo7").innerHTML='true';
+                //循环到数字直接退出
+                break;
+            }
+            else{
+                document.getElementById("demo7").innerHTML='false';
+            }
+        }
+    }
+
+    //8、给定字符串，检查是否包含重复连续字母
+    function function8() {
+        var str =  document.getElementById("zifu8").value.toString();
+        for (var i = 0; i < str.length; i++) {
+                if(str.charAt(i)===str.charAt(i+1)){
+                    if((str.charAt(i)>='a' &&str.charAt(i)<='z') || (str.charAt(i)>'A' &&str.charAt(i)<'Z')){
+                        document.getElementById("demo8").innerHTML='true';
+                        break;
+                    }
+                }
+                else{
+                    document.getElementById("demo8").innerHTML='false';
+                }
+        }
+    }
+    </script>
+</head>
+<body>
+<p>1、查找数组重复元素:输入数组数据,元素间以英文逗号间隔</p>
+<label for="shuzu"></label><input id="shuzu">
+<button onclick="function1()">点击查找</button>
+<p id="demo1"></p>
+<hr color="red">
+
+
+
+<p>2、JS实现打点计时器:输入start与end</p>
+start<label for="start"></label><input id="start">end<label for="end"></label><input id="end">
+<button onclick="function2()">点击开始</button>
+<p id="demo2"></p>
+<hr color="blue">
+
+
+<p>3、数组合并:输入数组数据,元素间以英文逗号间隔</p>
+数组1<label for="shuzu3_1"></label><input id="shuzu3_1">
+数组2<label for="shuzu3_2"></label><input id="shuzu3_2">
+<button onclick="function3()">点击合并</button>
+<p id="demo3"></p>
+<hr color="black">
+
+
+
+
+<p>4、计算数组元素总和:输入数组数据,元素间以英文逗号间隔</p>
+<label for="shuzu4"></label><input id="shuzu4">
+<button onclick="function4()">点击合并</button>
+<p id="demo4"></p>
+<hr color="green">
+
+
+
+<p>5、统计数组某一元素出现的次数:输入数组数据,元素间以英文逗号间隔</p>
+数组<label for="shuzu5"></label><input id="shuzu5">
+需要统计的元素<label for="yuansu"></label><input id="yuansu">
+<button onclick="function5()">点击统计</button>
+<p id="demo5"></p>
+<hr color="yellow">
+
+
+
+<p>6、求数组每个元素的2次方:输入数组数据,元素间以英文逗号间隔</p>
+<label for="shuzu6"></label><input id="shuzu6">
+<button onclick="function6()">点击计算</button>
+<p id="demo6"></p>
+<hr color="purple">
+
+
+
+
+<p>7、判断字符串是否包含数字</p>
+<label for="zifu7"></label><input id="zifu7">
+<button onclick="function7()">点击判断</button>
+<p id="demo7"></p>
+<hr color="Sienna">
+
+
+
+
+<p>8、给定字符串，检查是否包含连续重复字母</p>
+<label for="zifu8"></label><input id="zifu8">
+<button onclick="function8()">点击判断</button>
+<p id="demo8"></p>
+<hr color="0x058699">
+<p></p>
+<hr>
+</body>
+</html>

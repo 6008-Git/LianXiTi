@@ -1,0 +1,19 @@
+
+button{
+    font-family: Onyx,sans-serif;
+    color: #a80619;
+    background-color: cyan;
+    border: aliceblue;
+    border-radius: 6px;
+}
+input{
+    border-radius: 6px;
+    border-color: black;
+}
+p{
+    color: #027b72;
+    font-family: "Agency FB",serif;
+}
+*{
+    font-family: "Arial Rounded MT Bold",serif;
+}

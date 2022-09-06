@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>界面1</title>
+</head>
+<body bgcolor="#7fffd4" background="picture/paoche.jpg">
+<!--0718未知标签-->
+<p>
+    一段实验字体<br>
+    <b>一段实验字体</b><br>
+    <i>一段实验字体</i><br>
+    <strong>一段实验字体</strong><br>
+    <em>一段实验字体</em><br>
+</p>
+<hr/>
+<p>
+    <font size="36" color="#7fffd4" face="宋体">一段实验字体</font>
+</p>
+<hr/>
+<img src="picture/paoche2.jpg" width="300" height="200" alt="加载失败"/>
+<hr>
+<ol>
+    <li>有序</li>
+    <li>有序</li>
+    <li>有序</li>
+</ol>
+<ul>
+    <li>无序</li>
+    <li>无序</li>
+    <li>无序</li>
+</ul>
+<hr>
+<pre>
+    第一行
+    第二行
+    保留了源文本的换行
+</pre>
+<hr>
+<a href="index2.html"><font size="36" color="#7fffd4" face="宋体">进入新界面</font></a><br>
+<a href="mailto:2066687453@qq.com"><font size="36" color="#7fffd4" face="宋体">发送至我的邮箱</font></a>
+<hr>
+<marquee scrolldelay="100" direction=""></marquee>
+<hr>
+<table bgcolor="#7fffd4" border="1" width="500" height="150" bordercolor="red" cellpadding="2" cellspacing="2">
+    <tr>
+        <td rowspan="3">个人信息</td>
+        <td align="center">姓名</td>
+        <td align="center">性别</td>
+        <td colspan="2" align="center">联系方式+地址</td>
+    </tr>
+    <tr>
+        <td align="center">李康</td>
+        <td align="center">男</td>
+        <td align="center">18888888888</td>
+        <td align="center">山东</td>
+    </tr>
+    <tr>
+        <td align="center">刘洪雨</td>
+        <td align="center">男</td>
+        <td align="center">250250250</td>
+        <td align="center">潍坊</td>
+    </tr>
+</table>
+<hr>
+<form action="index2.html" method="post">
+    <label>
+        用户名：<input type="text"/>
+    </label><br>
+    <label>
+        密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password"/>
+    </label><br>
+    <label>
+        性别：<input name="1" type="radio" value="男" class="text-input">男 &nbsp;
+             <input name="1" type="radio" value="女">女<br>
+    </label>
+    <label>
+        未知选项：<input type="checkbox" value="1">1&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="2">2&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="3">3<br>
+    </label>
+    <label>
+        出生年月：<input type="byear" value="yyyy" size="4" maxlength="4">&nbsp;年
+        <select name="bmon">
+            <option value="" selected>[选择月份]</option>
+            <option value="1">1月</option>
+            <option value="2">2月</option>
+            <option value="3">3月</option>
+            <option value="4">4月</option>
+            <option value="5">5月</option>
+            <option value="6">6月</option>
+            <option value="7">7月</option>
+            <option value="8">8月</option>
+            <option value="9">9月</option>
+            <option value="10">10月</option>
+            <option value="11">11月</option>
+            <option value="12">12月</option>
+        </select><br>
+    </label>
+    <label>
+        <textarea name="text" cols="40" rows="6"></textarea><br>
+    </label>
+    <label>
+        <input type="reset" value="重置">
+        <input type="submit" value="提交">
+    </label>
+</form>
+<hr>
+<a href="d0718/test1.jsp">跳转</a>
+</body>
+</html>

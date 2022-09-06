@@ -1,0 +1,17 @@
+h1 {
+	color: #C30;
+}
+
+h2 {
+	color: #630;
+}
+body{
+	background:#BBE09F url("cabbage_C.gif") no-repeat center 85px fixed;
+	}
+#titlepage{
+	background-color: #D4F8B9;
+	background-image: url("cabbage_C.gif");
+	background-repeat: no-repeat;
+	background-position: center 75px;
+	background-attachment: fixed;
+}
